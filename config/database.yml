@@ -1,0 +1,14 @@
+setup: &setup
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  password:
+  username: postgres
+
+development:
+  <<: *setup
+  database: speaking_english_development
+
+test:
+  <<: *setup
+  database: speaking_english_test

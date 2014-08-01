@@ -1,0 +1,10 @@
+= simple_form_for [:admin, @video], html: { class: 'form-horizontal' } do |f|
+  = f.error_notification
+  = f.input :title
+  = f.input :slug
+  = f.input :description
+  = f.input :sourcecode
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'
+    = link_to t('helpers.links.cancel'), admin_videos_path, :class => 'btn'

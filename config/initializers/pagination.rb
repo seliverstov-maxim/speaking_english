@@ -1,0 +1,1 @@
+English::Application.config.pagination = { per_page: 100 }

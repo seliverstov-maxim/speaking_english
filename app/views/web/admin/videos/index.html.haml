@@ -1,0 +1,38 @@
+.page-header
+  %h1=t '.title'
+
+.action-toolbox.clearfix
+  = link_to t('.new'), new_admin_video_path, class: 'btn btn-primary pull-right'
+
+- if @videos.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th.video.video_id= 'id'
+        %th.video.video-title= 'title'
+        %th.video.video-state= 'state'
+        %th.video.video-action= 'action'
+    %tbody
+      - @videos.each do |video|
+        %tr
+          %td= video.id
+          %td= video.title
+          %td= video.state
+          -#%td
+          -#  %a.btn.btn-info.nowrap{ "href" => '' }
+          -#    %span.glyphicon.glyphicon-edit
+          -#  %a.btn.btn-danger.nowrap{ "href" => '' }
+          -#    %span.glyphicon.glyphicon-trash
+          %td.btn-lg
+            = link_to edit_admin_video_path(video.id) do
+              %span.glyphicon.glyphicon-pencil
+            - if video.deleted?
+              = link_to admin_video_path(video, video: { state_event: :restore }), method: :patch do
+                %span.glyphicon.glyphicon-share-alt
+            - else
+              = link_to admin_video_path(video), method: :delete do
+                %span.glyphicon.glyphicon-trash
+
+  = paginate @videos, :remote => true
+- else
+  = t('.no_data')

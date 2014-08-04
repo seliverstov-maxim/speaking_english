@@ -31,4 +31,17 @@ gem 'therubyracer', platforms: :ruby
 
 #gem 'debugger', '~> 1.6.8', group: [:development, :test]
 #gem 'pry-debugger', group: [:development, :test]
-gem 'pry'
+
+
+group :development, :test do
+  gem 'debugger'
+  gem 'pry'
+  gem 'factory_girl_rails'
+  gem 'wrong'
+  gem 'minitest-rails', '2.0.3'
+  #gem 'capistrano',  '~> 3.1'
+  #gem 'capistrano-rails', '~> 1.1'
+  #gem 'vendorer'
+  #gem 'minitest-reporters'
+  #gem 'simplecov', require: false
+end

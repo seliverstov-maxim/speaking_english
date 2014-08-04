@@ -24,7 +24,6 @@ class Web::Admin::VideosController < Web::Admin::ApplicationController
 
   def update
     @video = VideoEditType.find(params[:id])
-p params[:video]
     if @video.update(params[:video])
       redirect_to admin_videos_path
     else

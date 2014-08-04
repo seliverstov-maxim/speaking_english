@@ -1,0 +1,9 @@
+= simple_form_for [:admin, @subtitle], html: { class: 'form-horizontal' } do |f|
+  = f.error_notification
+  = f.input :lang
+  = f.input :source
+  = f.association :video
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'
+    = link_to t('helpers.links.cancel'), admin_subtitles_path, :class => 'btn'

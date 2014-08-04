@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614202327) do
+ActiveRecord::Schema.define(version: 20140804151941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "subtitles", force: true do |t|
-    t.string   "land"
+    t.string   "lang"
     t.integer  "video_id"
     t.text     "source"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "state"
   end
 
   add_index "subtitles", ["video_id"], name: "index_subtitles_on_video_id", using: :btree

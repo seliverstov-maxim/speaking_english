@@ -1,7 +1,7 @@
 class CreateSubtitles < ActiveRecord::Migration
   def change
     create_table :subtitles do |t|
-      t.string :land
+      t.string :lang
       t.references :video, index: true
       t.text :source
 

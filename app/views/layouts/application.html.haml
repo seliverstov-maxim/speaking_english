@@ -22,15 +22,14 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        = link_to "Project name", "#", :class => "navbar-brand"
+        = link_to t('.title'), "#", :class => "navbar-brand"
       .collapse.navbar-collapse
         %ul.nav.navbar-nav
           %li.active
-            %a{:href => "#"} Home
+            = link_to t('.videos'), videos_path
           %li
-            %a{:href => "#about"} About
-          %li
-            %a{:href => "#contact"} Contact
+            = link_to t('.admin'), admin_videos_path
+
     .container
       - flash.each do |name, msg|
         = content_tag :div, :class => "alert alert-#{name == :error ? "danger" : "success" } alert-dismissable" do

@@ -4,5 +4,7 @@ English::Application.routes.draw do
       resources :subtitles
       resources :videos
     end
+
+    resources :videos, only: [:index, :show]
   end
 end

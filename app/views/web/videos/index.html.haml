@@ -1,0 +1,16 @@
+.page-header
+  %h1=t '.title'
+
+- if @videos.present?
+  %table.table.table-striped
+    %thead
+      %tr
+        %th.video.video-title= 'title'
+    %tbody
+      - @videos.each do |video|
+        %tr
+          %td= video.title
+
+  = paginate @videos, :remote => true
+- else
+  = t('.no_data')

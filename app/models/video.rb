@@ -13,4 +13,6 @@ class Video < ActiveRecord::Base
       transition all => :deleted
     end
   end
+
+  include VideoRepository
 end
